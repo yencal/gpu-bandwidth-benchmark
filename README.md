@@ -20,6 +20,9 @@ python3 plot_results.py benchmark_results_512.csv
 The figures below show the measured memory bandwidth on A100, H100, H200 GPUs.
 All results use a block size of 1024 and evaluate vectorized load sizes from 1–16 bytes.
 
+* **A100**
+![A100 Bandwidth](figures/bandwidth_plot_blocksize1024_a100.png)
+
 * **H100**
 ![H100 Bandwidth](figures/bandwidth_plot_blocksize1024_h100.png)
 
