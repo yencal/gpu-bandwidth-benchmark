@@ -186,14 +186,14 @@ BenchmarkResult measure_memcpy(
 	return result;
 }
 
+// Custom 32 bytes vectore size
+struct alignas(32) vec32_t {
+	uint64_t x, y, z, w;  // 4 * 8 = 32 bytes
+};
+
 std::vector<BenchmarkResult> run_benchmark(size_t block_size)
 {
 	using T = int8_t;
-
-	// Custom 32 bytes vectore size
-	struct alignas(32) vec32_t {
-		uint64_t x, y, z, w;  // 4 * 8 = 32 bytes
-	};
 
 	// Create stream
 	cudaStream_t stream;
