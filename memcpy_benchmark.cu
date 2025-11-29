@@ -66,7 +66,7 @@ __global__ void memcpy_kernel(
 	size_t remainder_start_element = (n_vecs * sizeof(VecT)) / sizeof(T);
 	for (size_t i = remainder_start_element + idx; i < n_elements; i += stride)
 	{
-  	dst[i] = src[i];
+		dst[i] = src[i];
 	}
 }
 
@@ -199,7 +199,7 @@ std::vector<BenchmarkResult> run_benchmark(size_t block_size)
 	std::cout << "Running benchmarks with block size: " << block_size << std::endl;
 	std::cout << "Progress: " << std::flush;
 
-	for (size_t power = 8; power <= 27; ++power)
+	for (size_t power = 8; power <= 30; ++power)
 	{
 		size_t n_elements = 1ULL << power;
 		size_t size_bytes = n_elements * sizeof(T);
