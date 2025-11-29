@@ -297,7 +297,7 @@ void print_device_info()
 int main(int argc, char** argv)
 {
 	// Parse command line arguments
-	size_t block_size = 256;  // default
+	size_t block_size = 1024;  // default
 	std::string csv_filename = "benchmark_results.csv";
 
 	if (argc > 1)
