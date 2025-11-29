@@ -12,6 +12,7 @@ python3 plot_results.py
 For more options such as changing block size and output filename
 ```bash
 ./memcpy_benchmark.exe 512 benchmark_results_512.csv
+python3 plot_results.py benchmark_results_512.csv
 ```
 
 ## H100 Bandwidth Plot
