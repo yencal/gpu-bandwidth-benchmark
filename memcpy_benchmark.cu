@@ -5,6 +5,7 @@
 #include <limits>
 #include <algorithm>
 #include <cstdlib>
+#include <cstdint>
 
 // ============================================================================
 // Error Checking
@@ -61,7 +62,7 @@ __global__ void memcpy_kernel(
 		dst_vec[i] = src_vec[i];
 	}
 
-  // Phase 2: Handle remainder elements
+	// Phase 2: Handle remainder elements
 	size_t remainder_start_element = (n_vecs * sizeof(VecT)) / sizeof(T);
 	for (size_t i = remainder_start_element + idx; i < n_elements; i += stride)
 	{
@@ -122,8 +123,8 @@ BenchmarkResult measure_memcpy(
 	T* h_dst,
 	size_t block_size,
 	cudaStream_t& stream,
-	size_t num_warmup = 20,
-	size_t num_iterations = 20)
+	size_t num_warmup = 100,
+	size_t num_iterations = 100)
 {
 	size_t size_bytes = n_elements * sizeof(T);
 	size_t n_vecs = size_bytes / sizeof(VecT);
@@ -325,7 +326,6 @@ int main(int argc, char** argv)
 	write_csv(results, csv_filename);
 
 	std::cout << "\nBenchmark complete!" << std::endl;
-	std::cout << "Total tests: " << results.size() << std::endl;
 
 	return EXIT_SUCCESS;
 }
