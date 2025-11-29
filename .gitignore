@@ -1,0 +1,7 @@
+# Build artifacts
+*.exe
+*.o
+
+# Files
+*.csv
+*.swp
