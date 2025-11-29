@@ -20,9 +20,9 @@ for vec_size in sorted(vec_sizes):
 	             marker='o', label=label, linewidth=2, markersize=6)
 
 # Formatting
-plt.xlabel('Buffer Size (bytes)', fontsize=14)
+plt.xlabel('Array Size (bytes)', fontsize=14)
 plt.ylabel('Bandwidth (GB/s)', fontsize=14)
-plt.title('Memory Bandwidth vs Buffer Size', fontsize=16)
+# plt.title('Memory Bandwidth vs Array Size', fontsize=16)
 plt.legend(fontsize=12)
 plt.grid(True, alpha=0.3)
 plt.tight_layout()
