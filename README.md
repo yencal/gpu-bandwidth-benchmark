@@ -13,3 +13,6 @@ For more options such as changing block size and output filename
 ```bash
 ./memcpy_benchmark.exe 512 benchmark_results_512.csv
 ```
+
+## H100 Bandwidth Plot at 256 block size
+![H100 Bandwidth](bandwidth_plot_h100.png)
